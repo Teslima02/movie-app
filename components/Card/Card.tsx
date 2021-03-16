@@ -1,14 +1,17 @@
-import React, { FC, HTMLAttributes } from 'react';
+import * as React from 'react';
+import Hero from '../../public/hero.svg';
 
-export interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  variant: 'elevation' | 'outlined';
-  classes?: string;
-}
-
-export const Card: FC<CardProps> = ({ variant = 'elevation', children, classes, ...rest }) => {
+export function LeftCard(): JSX.Element {
   return (
-    <div className={[ classes, 'rounded-xl p-2', `${variant === 'elevation' ? 'shadow-md' : 'border-2 border-solid'}` ].join(' ')} {...rest}>
-      {children}
+    <div className='max-w-xs mx-auto bg-white shadow-md overflow-hidden'>
+      <div className='my-12 mx-4'>
+          <p className="my-8 text-5xl font-semibold text-gray-900 uppercase">
+            Rolobank
+          </p>
+          <p className="text-5xl text-blue-800 font-bold uppercase">
+            We are a bank of the young and for the young
+          </p>
+      </div>
     </div>
   );
 };
